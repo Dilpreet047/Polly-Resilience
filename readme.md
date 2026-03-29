@@ -376,7 +376,8 @@ to
 
 ## Polly Resilience Policies State Diagram
 
-![Polly Resilience Diagram](Docs\ResilienceArch.png)
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ff183ffd-a661-4343-883b-de9f7b76bc65" />
+
 
 ## ⭐ If You Found This Useful
 
