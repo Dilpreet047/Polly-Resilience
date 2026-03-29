@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResilienceProject", "ResilienceProject.csproj", "{4A9F593E-F9DE-B7BA-B46A-F4EFDEC15FF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A9F593E-F9DE-B7BA-B46A-F4EFDEC15FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A9F593E-F9DE-B7BA-B46A-F4EFDEC15FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A9F593E-F9DE-B7BA-B46A-F4EFDEC15FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A9F593E-F9DE-B7BA-B46A-F4EFDEC15FF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67BC5F77-0F75-4362-B5AE-9816154A7D69}
+	EndGlobalSection
+EndGlobal

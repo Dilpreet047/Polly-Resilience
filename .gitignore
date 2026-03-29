@@ -1,0 +1,85 @@
+# =========================
+# Build folders
+# =========================
+bin/
+obj/
+
+# =========================
+# User-specific files
+# =========================
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# VS Code / Rider / IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Environment / secrets
+# =========================
+appsettings.Development.json
+appsettings.Local.json
+*.env
+
+# =========================
+# Entity Framework
+# =========================
+*.db
+*.mdf
+*.ldf
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+packages/
+.nuget/
+
+# =========================
+# Publish output
+# =========================
+publish/
+*.publishproj
+
+# =========================
+# Test results
+# =========================
+TestResults/
+
+# =========================
+# Resharper / Rider
+# =========================
+_ReSharper*/
+*.DotSettings.user
+
+# =========================
+# Coverage
+# =========================
+coverage/
+*.coverage
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+
+# =========================
+# Node (if you add frontend later)
+# =========================
+node_modules/
