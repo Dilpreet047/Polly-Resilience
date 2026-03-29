@@ -102,8 +102,8 @@ ResilientApiDemo
 ### 1️⃣ Create Project
 
 ```bash
-dotnet new webapi -n ResilientApiDemo
-cd ResilientApiDemo
+dotnet new webapi -n ResilientProject
+cd ResilientProject
 ```
 
 ---
@@ -333,13 +333,6 @@ This pattern is widely used in:
 * Cloud-native APIs
 * High-scale distributed systems
 
-Companies using similar resilience strategies:
-
-* Netflix
-* Amazon
-* Microsoft Azure
-* Uber
-
 ---
 
 ## 💡 Key Engineering Takeaways
@@ -348,17 +341,6 @@ Companies using similar resilience strategies:
 * Always isolate downstream failures.
 * Resilience belongs in infrastructure, not business logic.
 * HttpClientFactory + Polly is the recommended ASP.NET approach.
-
----
-
-## 🚀 Possible Future Enhancements
-
-* Retry with exponential backoff
-* Timeout policy
-* Fallback responses
-* Bulkhead isolation
-* Centralized resilience pipeline
-* Observability & metrics
 
 ---
 
@@ -377,6 +359,25 @@ to
 ## Polly Resilience Policies State Diagram
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ff183ffd-a661-4343-883b-de9f7b76bc65" />
+
+> [!CAUTION]
+> **Policy Registration Order Matters!**  
+> The order of `AddPolicyHandler` in `Program.cs` is critical. The **FallbackPolicy** must be registered first (outermost) to ensure it can catch failures from the Retry and Circuit Breaker policies.
+> 
+
+### 🛡️ Resilience Strategy
+The service uses a layered resilience approach. Requests flow from the **Outermost** layer to the **Innermost** layer:
+
+
+| Layer | Policy | Purpose |
+| :--- | :--- | :--- |
+| **1 (Outer)** | `Fallback` | Returns a default "Service Unavailable" JSON response if all else fails. |
+| **2** | `Retry` | Attempts to resend the request up to 3 times on transient errors. |
+| **3** | `Circuit Breaker` | Temporarily blocks requests if failure thresholds are met. |
+| **4 (Inner)** | `Timeout` | Limits each individual request attempt to 2 seconds. |
+
+> [!IMPORTANT]
+> To modify the per-request timeout, update the `TimeoutPolicy` in `ResiliencePolicy.cs`.
 
 
 ## ⭐ If You Found This Useful
